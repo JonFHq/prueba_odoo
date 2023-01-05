@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+    <menuitem id="prueba_menu_root" name="PruebaOdoo"/>
+
+        <menuitem id="usuarios_menu_act" name="Usuarios" parent="prueba_menu_root" action="usuarios_action"/>
+<!--
+        <menuitem id="portatiles_menu_act" name="Portatiles" parent="prueba_menu_root" action="portatiles_action"/>
+
+        <menuitem id="transacciones_menu_act" name="Transacciones" parent="prueba_menu_root" action="transacciones_action"/>
+-->
+</odoo>
