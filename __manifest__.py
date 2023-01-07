@@ -17,9 +17,9 @@
 
     # always loaded
     'data': [
+        'views/usuarios.xml',
         'views/portatiles.xml',
         'views/transacciones.xml',
-        'views/usuarios.xml',
         'views/menu.xml'
     ]
 }

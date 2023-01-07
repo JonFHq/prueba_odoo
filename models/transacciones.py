@@ -1,10 +1,12 @@
 from odoo import _, api, fields, models
 
 class Transacciones(models.Model):
-    _name = "prueba.transacciones"
+    _name = "transacciones"
+    _rec_name = "nombre"
     _description = "transacciones"
 
-    comprador = fields.Many2many('usuarios')
-    vendedor = fields.Many2many('usuarios')
+    nombre = fields.Char(string="nombre")
+    comprador = fields.Many2one('usuarios')
+    vendedor = fields.Many2one('usuarios')
     portatil = fields.Many2one('portatiles')
-    precio_de_compra = fields.Integer(string='Precio de compra')
+    precio = fields.Integer(string='Precio')

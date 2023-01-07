@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    
+    <record id="portatiles_action" model="ir.actions.act_window">
+        <field name="name">Portatiles</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">portatiles</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="portatiles_view_form" model="ir.ui.view">
+        <field name="name">Portatiles</field>
+        <field name="model">portatiles</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="nombre" />
+                        <field name="imagen" />
+                        <field name="descripcion" />
+                        <field name="propietario" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="portatiles_view_tree" model="ir.ui.view">
+        <field name="name">Portatiles</field>
+        <field name="model">portatiles</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="nombre" />
+                <field name="imagen" />
+                <field name="propietario" />
+                <field name="descripcion" />
+            </tree>
+        </field>
+    </record>
 
 </odoo>

@@ -14,7 +14,7 @@ class Usuarios(models.Model):
     portatiles_vendidos = fields.One2many("portatiles", "propietario", string="Portátiles a la venta")
     vendedor = fields.Boolean(string="Vendedor", compute='_vendedor')
 
-    @api.depends('portatiles_venta')
+    @api.depends('portatiles')
     def _vendedor(self):
         for record in self:
             if len(record.portatiles) > 0:

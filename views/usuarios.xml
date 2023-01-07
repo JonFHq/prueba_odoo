@@ -18,14 +18,14 @@
             <form string="Usuario">
                 <sheet>
                     <group string="Datos básicos">
-                        <group>
-                            <field name="dni" />
+                        <group string="Necesario">
                             <field name="nombre" />
-                            <field name="apellido" />
+                            <field name="dni" />
+                            <field name="email" />
                             <field name="telefono" />
                         </group>
                         <group string="Imagen de perfil">
-                            <field name="imagen" />
+                            <field name="imagen" string=""/>
                         </group>
                     </group>
                     <group>
@@ -41,9 +41,8 @@
         <field name="model">usuarios</field>
         <field name="arch" type="xml">
             <tree string="Usuarios">
-                <field name="dni" />
                 <field name="nombre" />
-                <field name="apellido" />
+                <field name="dni" />
                 <field name="email" />
                 <field name="telefono" />
                 <field name="vendedor" />
