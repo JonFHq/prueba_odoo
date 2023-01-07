@@ -29,11 +29,8 @@
         <field name="name">Ventas</field>
         <field name="model">transacciones</field>
         <field name="arch" type="xml">
-            <tree string="">
-                <field name="vendedor" />
-                <field name="comprador" />
-                <field name="portatil" />
-                <field name="precio" />
+            <tree string="Ventas">
+                <field name="nombre" />
             </tree>
         </field>
     </record>
