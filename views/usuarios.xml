@@ -30,6 +30,7 @@
                     </group>
                     <group>
                         <field name="portatiles" />
+                        <field name="portatiles_vendidos" />
                     </group>
                 </sheet>
             </form>
