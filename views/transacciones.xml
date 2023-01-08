@@ -14,9 +14,13 @@
         <field name="arch" type="xml">
             <form string="Ventas">
                 <sheet>
-                    <group>
+                    <group name="Vendedor">
                         <field name="vendedor" />
+                    </group>
+                    <group name="Comprador">
                         <field name="comprador" />
+                    </group>
+                    <group name="Portatil">
                         <field name="portatil" />
                         <field name="precio" />
                     </group>

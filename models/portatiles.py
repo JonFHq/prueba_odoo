@@ -8,4 +8,14 @@ class Portatiles(models.Model):
     nombre = fields.Char(string="Nombre del portatil", required=True)
     imagen = fields.Image(string="Imagen del producto")
     descripcion = fields.Text(string="Descripcion del portatil", required=True)
-    propietario = fields.Many2one('usuarios', required=True)
+    vendedor = fields.Many2one('usuarios', required=True)
+    vendido = fields.Boolean(string='Vendido')
+
+    @api.depends('vendedor')
+    def _vendido(self):
+        for record in self:
+            for venta in record.vendedor.ventas:
+                if venta.portatil == self:
+                    record.vendido = True
+                else:
+                    record.vendido = False

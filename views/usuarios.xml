@@ -20,7 +20,7 @@
                     <group string="Datos básicos">
                         <group string="Necesario">
                             <field name="nombre" />
-                            <field name="dni" />
+                            <field name="dni" min='9'/>
                             <field name="email" />
                             <field name="telefono" />
                         </group>
@@ -28,9 +28,12 @@
                             <field name="imagen" string=""/>
                         </group>
                     </group>
-                    <group>
+                    <group string="Portatiles">
                         <field name="portatiles" />
-                        <field name="portatiles_vendidos" />
+                        <field name="ventas" />
+                    </group>
+                    <group string="Compras">
+                        <field name="compras" />
                     </group>
                 </sheet>
             </form>
