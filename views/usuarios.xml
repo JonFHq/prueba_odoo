@@ -20,7 +20,7 @@
                     <group string="Datos básicos">
                         <group string="Necesario">
                             <field name="nombre" />
-                            <field name="dni" min='9'/>
+                            <field name="dni" />
                             <field name="email" />
                             <field name="telefono" />
                         </group>

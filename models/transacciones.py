@@ -20,31 +20,28 @@ class Transacciones(models.Model):
     def _onchange_vendedor(self):
         if self.vendedor:
             if self.vendedor.vendedor == False:
-                return {
-                    'warning': {
-                        'title': "Error",
-                        'message': "El usuario no es vendedor",
-                    },
-                }
+                raise ValueError("El usuario no es vendedor")
     
     @api.onchange('vendedor', 'comprador')
     def _onchange_usuarios(self):
         if self.vendedor and self.comprador:
             if self.vendedor.dni == self.comprador.dni:
-                return {
-                    'warning': {
-                        'title': "Error",
-                        'message': "No puede comprar un portatil a si mismo",
-                    },
-                }
+                raise ValueError("No puede comprarse un portatil a si mismo")
 
     @api.onchange('portatil', 'vendedor')
     def _onchange_portatil(self):
         if self.portatil and self.vendedor:
             if self.portatil.vendedor != self.vendedor:
-                return {
-                    'warning': {
-                        'title': "Error",
-                        'message': "El portatil no pertenece al vendedor",
-                    },
-                }
+                raise ValueError("El portatil no pertenece al vendedor") 
+
+    @api.onchange('precio')
+    def _onchange_precio(self):
+        if self.precio:
+            if self.precio <= 0:
+                raise ValueError("El precio no puede ser negativo o gratuito")
+
+    @api.onchange('portatil')
+    def _onchange_portatil(self):
+        if self.portatil:
+            if self.portatil.estado == 'vendido':
+                raise ValueError("El portatil ya esta vendido")

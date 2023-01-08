@@ -19,7 +19,6 @@
                         <field name="imagen" />
                         <field name="descripcion" />
                         <field name="vendedor" />
-                        <fields name="vendido" />
                     </group>
                 </sheet>
             </form>
@@ -35,7 +34,6 @@
                 <field name="imagen" />
                 <field name="vendedor" />
                 <field name="descripcion" />
-                <field name="vendido" />
             </tree>
         </field>
     </record>
