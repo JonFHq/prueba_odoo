@@ -22,6 +22,9 @@
                     </group>
                     <group name="Portatil">
                         <field name="portatil" />
+                    </group>
+                    <group name="Compra">
+                        <field name="fecha_venta" />
                         <field name="precio" />
                     </group>
                 </sheet>

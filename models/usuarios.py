@@ -26,31 +26,37 @@ class Usuarios(models.Model):
     @api.onchange('dni')
     def _onchange_dni(self):
         if self.dni:
-            if len(self.dni) != 9:
-                raise ValueError("El DNI debe tener 9 caracteres")
-                # return {
-                #     'warning': {
-                #         'title': "Error",
-                #         'message': "El DNI debe tener 9 caracteres",
-                #     }
-                # }
-            if self.dni[8].isalpha() == False:
-                raise ValueError("El último caracter del DNI debe ser una letra")
-                # return {
-                #     'warning': {
-                #         'title': "Error",
-                #         'message': "El último caracter del DNI debe ser una letra",
-                #     }
-                # }
+            try:
+                if len(self.dni) != 9:
+                    raise ValueError("El DNI debe tener 9 caracteres")
+            except:
+                return {
+                    'warning': {
+                        'title': "Error",
+                        'message': "El DNI debe tener 9 caracteres",
+                    }
+                }
+            try:
+                if self.dni[8].isalpha() == False:
+                    raise ValueError("El último caracter del DNI debe ser una letra")
+            except:
+                return {
+                    'warning': {
+                        'title': "Error",
+                        'message': "El último caracter del DNI debe ser una letra",
+                    }
+                }
 
     @api.onchange('email')
     def _onchange_email(self):
-        if self.email:
-            if '@' not in self.email:
-                raise ValueError("El email debe tener un @")
-                # return {
-                #     'warning': {
-                #         'title': "Error",
-                #         'message': "El email debe tener un @",
-                #     }
-                # }
+        try:
+            if self.email:
+                if '@' not in self.email:
+                    raise ValueError("El email debe tener un @")
+        except:
+            return {
+                'warning': {
+                    'title': "Error",
+                    'message': "El email debe tener un @",
+                }
+            }
